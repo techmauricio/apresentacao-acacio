@@ -21,7 +21,7 @@
         body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-pure); color: var(--dark); line-height: 1.8; }
         .wrapper { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
-        /* HEADER COM CONTRASTE REAL */
+        /* HEADER */
         header { 
             position: fixed; 
             top: 0; 
@@ -35,12 +35,8 @@
         .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--dark); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
         .crn-tag { font-size: 0.65rem; font-weight: 600; opacity: 0.5; letter-spacing: 2px; }
 
-        /* HERO BRANCO PURO */
-        .hero-section { 
-            padding-top: 80px; 
-            background-color: var(--bg-pure); 
-        }
-        
+        /* HERO */
+        .hero-section { padding-top: 80px; background-color: var(--bg-pure); }
         .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 85vh; align-items: center; gap: 80px; padding: 60px 0; }
         .hero-text h2 { font-size: 0.85rem; font-weight: 600; color: var(--accent); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
         .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 4.2rem; line-height: 1.1; margin-bottom: 30px; }
@@ -59,12 +55,11 @@
         .marquee-content span { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-right: 60px; text-transform: uppercase; font-style: italic; opacity: 0.8; }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* SOBRE MIM COM CONTRASTE REAL */
+        /* SOBRE MIM */
         .about-section { padding: 120px 0; background-color: var(--bg-off); border-bottom: 1px solid var(--border); }
         .about-grid { display: grid; grid-template-columns: 0.6fr 1.4fr; gap: 80px; }
         .about-title h3 { font-family: 'Playfair Display', serif; font-size: 3.5rem; line-height: 1; }
         .about-title h3 span { display: block; font-style: italic; margin-left: 20px; color: var(--accent); }
-        
         .about-content p { font-size: 1.1rem; font-weight: 300; margin-bottom: 30px; text-align: justify; color: #333; }
         
         .cv-box { 
@@ -75,9 +70,9 @@
         .cv-item { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 12px; }
         .cv-item i { color: var(--accent); font-size: 0.5rem; }
 
-        /* CONTATO BRANCO PURO */
+        /* CONTATO */
         .contact-section { padding: 120px 0; background-color: var(--bg-pure); }
-        .contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 100px; align-items: start; }
+        .contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: start; }
         .contact-cta h3 { font-family: 'Playfair Display', serif; font-size: 3.5rem; line-height: 1.1; margin-bottom: 25px; }
         
         .btn-whatsapp { 
@@ -89,15 +84,39 @@
         .btn-whatsapp:hover { transform: translateY(-3px); }
 
         .contact-details { border-left: 1px solid var(--border); padding-left: 60px; }
-        .detail-group { margin-bottom: 40px; }
-        .detail-group strong { display: block; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; color: var(--accent); margin-bottom: 15px; }
+        .detail-group { margin-bottom: 30px; }
+        .detail-group strong { display: block; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; color: var(--accent); margin-bottom: 10px; }
+        
+        .social-circle { 
+            display: flex; width: 40px; height: 40px; background: var(--bg-off); 
+            border-radius: 50%; justify-content: center; align-items: center; 
+            color: var(--dark); text-decoration: none; border: 1px solid var(--border);
+        }
 
-        @media (max-width: 1024px) {
-            .hero, .about-grid, .contact-grid { grid-template-columns: 1fr; text-align: center; gap: 50px; }
-            .hero-text h1, .contact-cta h3 { font-size: 3rem; }
-            .contact-details { border-left: none; border-top: 1px solid var(--border); padding-top: 50px; }
-            .hero-image-container { height: 450px; }
-            .cv-box { grid-template-columns: 1fr; }
+        /* MEDIA QUERIES - RESPONSIVIDADE CELULAR */
+        @media (max-width: 768px) {
+            .wrapper { padding: 0 25px; }
+            
+            nav { padding: 15px 25px; flex-direction: column; gap: 5px; text-align: center; }
+            .logo { font-size: 1.1rem; }
+            .crn-tag { font-size: 0.55rem; }
+
+            .hero { grid-template-columns: 1fr; gap: 40px; padding: 40px 0; text-align: center; }
+            .hero-text h1 { font-size: 2.8rem; }
+            .hero-text p { margin: 0 auto 30px; }
+            .hero-image-container { height: 400px; box-shadow: 12px 12px 0px var(--accent); }
+
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .about-title h3 { font-size: 2.5rem; text-align: center; }
+            .cv-box { grid-template-columns: 1fr; padding: 25px; }
+
+            .contact-grid { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+            .contact-cta h3 { font-size: 2.5rem; }
+            .btn-whatsapp { width: 100%; justify-content: center; padding: 18px 20px; }
+            
+            .contact-details { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 40px; }
+            .detail-group { margin-bottom: 25px; }
+            .detail-group div { justify-content: center; }
         }
     </style>
 </head>
@@ -156,43 +175,40 @@
         </div>
     </section>
 
-<section class="contact-section" id="contato" style="padding: 120px 0;">
-        <div class="wrapper contact-grid" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: start;">
-            
+    <section class="contact-section" id="contato">
+        <div class="wrapper contact-grid">
             <div class="contact-cta">
-                <h3 style="margin-bottom: 25px; line-height: 1.1;">Inicie sua<br>evolução.</h3>
-                <p style="margin-bottom: 40px; max-width: 420px; font-weight: 300; color: #555;">Agende seu atendimento na Clínica Acacio Barros e tenha um planejamento exclusivo focado em seus objetivos.</p>
+                <h3>Inicie sua<br>evolução.</h3>
+                <p>Agende seu atendimento na Clínica Acacio Barros e tenha um planejamento exclusivo focado em seus objetivos.</p>
                 
                 <a href="https://wa.me/5511978625102" class="btn-whatsapp" target="_blank">
                     <i class="fab fa-whatsapp"></i> AGENDAR CONSULTA
                 </a>
             </div>
 
-            <div class="contact-details" style="padding-left: 60px; border-left: 1px solid var(--border);">
-                
-                <div class="detail-group" style="margin-bottom: 30px;">
-                    <strong style="display: block; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; color: var(--accent); margin-bottom: 10px;">Localização</strong>
-                    <p style="font-size: 0.95rem; line-height: 1.5; color: #444;">
+            <div class="contact-details">
+                <div class="detail-group">
+                    <strong>Localização</strong>
+                    <p>
                         <strong>Green Work Boulevard Jabaquara</strong><br>
                         Av. Eng. Armando de Arruda Pereira, 2937<br>
                         Bloco B, Sala 103 — São Paulo/SP
                     </p>
                 </div>
                 
-                <div class="detail-group" style="margin-bottom: 30px;">
-                    <strong style="display: block; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; color: var(--accent); margin-bottom: 10px;">Contato Direto</strong>
-                    <p style="font-size: 0.95rem; color: #444;">atendimento@acaciobarros.com</p>
+                <div class="detail-group">
+                    <strong>Contato Direto</strong>
+                    <p>atendimento@acaciobarros.com</p>
                 </div>
 
                 <div class="detail-group">
-                    <strong style="display: block; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; color: var(--accent); margin-bottom: 15px;">Redes Sociais</strong>
+                    <strong>Redes Sociais</strong>
                     <div style="display: flex; gap: 12px;">
-                        <a href="https://www.instagram.com/acaciobarrosnutri/" class="social-circle" target="_blank" style="width: 40px; height: 40px;">
+                        <a href="https://www.instagram.com/acaciobarrosnutri/" class="social-circle" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
